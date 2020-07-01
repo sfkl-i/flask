@@ -14,6 +14,6 @@ def admin_required(func):
             return current_app.login_manager.unauthorized()
         elif not current_user.is_admin:
             flash("Страница доступна только для админов")
-            return redirect(url_for('index'))
+            return redirect(url_for('news.index'))
         return func(*args, **kwargs)
     return decorated_views
