@@ -3,3 +3,6 @@ env/
 config.py
 *.db
 *.DB-JOURNAL
+*.txt
+*.sh
+celerybeat-schedule
