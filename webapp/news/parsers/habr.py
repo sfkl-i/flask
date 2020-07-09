@@ -10,7 +10,7 @@ from webapp.news.models import News
 if platform.system() == 'Windows':
     locale.setlocale(locale.LC_ALL, "russian")
 else:
-    locale.setlocale(locale.LC_TIME, 'ru_UA.UTF-8')
+    locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 def parse_habr_date(date_str):
     if 'сегодня' in date_str:
@@ -24,7 +24,7 @@ def parse_habr_date(date_str):
     except ValueError:
         return datetime.now()
 
-def get_habr_snippets():
+def get_news_snippets():
     html = get_html("https://habr.com/ru/search/?target_type=posts&q=python&order_by=date")
     if html:
         soup = BeautifulSoup(html, "html.parser")#Преобразованный html в дерево супа
